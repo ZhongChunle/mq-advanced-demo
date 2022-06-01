@@ -13,3 +13,10 @@ spring:
     listener:
       simple:
         prefetch: 1
+        # none消息投递就会销毁   auto：自动ack
+        acknowledge-mode: auto # 消息确认者机制
+        retry:
+          enabled: true # 开启失败测试机制
+          initial-interval: 1000 # 初识的失败等待时长为1秒
+          multiplier: 1 # 失败的等待时长倍数
+          max-attempts: 4 # 最大重试次数

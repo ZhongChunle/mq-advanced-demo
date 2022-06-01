@@ -10,3 +10,8 @@ spring:
     username: itcast
     password: 123321
     virtual-host: /
+    # 消息确认是必须开启如下的设置
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
